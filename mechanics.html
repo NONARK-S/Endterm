@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Core Mechanics | The Adventurer's Primer</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;1,400&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+<header>
+<nav class="navbar navbar-expand-md site-nav">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">The Adventurer's Primer</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle menu"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="mechanics.html">Mechanics</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>
+<main class="container py-5">
+  <article>
+    <h1>Core mechanics</h1>
+    <p class="lead">Nearly everything in the game runs on one loop. Learn it once and you can follow any table.</p>
+
+    <section class="my-5" aria-labelledby="loop">
+      <h2 id="loop" class="mb-4">The d20 loop</h2>
+      <div class="row g-4">
+        <div class="col-12 col-md-4"><div class="panel"><div class="step-num">1</div><h3>Say what you try</h3><p>You describe an action, such as leaping a pit. The Dungeon Master (the game's narrator) decides if the outcome is uncertain.</p></div></div>
+        <div class="col-12 col-md-4"><div class="panel"><div class="step-num">2</div><h3>Roll and add</h3><p>Roll a d20 and add the modifier from the ability that fits the action.</p></div></div>
+        <div class="col-12 col-md-4"><div class="panel"><div class="step-num">3</div><h3>Beat the target</h3><p>If your total meets or beats the Difficulty Class (DC) set by the Dungeon Master, you succeed.</p></div></div>
+      </div>
+    </section>
+
+    <section class="my-5" id="modifiers" aria-labelledby="mods">
+      <h2 id="mods" class="mb-4">Ability modifiers</h2>
+      <p>Each ability has a score. The score gives a modifier, which is the number you actually add to a roll.</p>
+      <div class="table-responsive">
+        <table class="table table-striped rules-table">
+          <caption>Ability score to modifier</caption>
+          <thead><tr><th scope="col">Score</th><th scope="col">Modifier</th><th scope="col">What it feels like</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>-5</td><td>Severely weak</td></tr>
+            <tr><td>2-3</td><td>-4</td><td>Very weak</td></tr>
+            <tr><td>8-9</td><td>-1</td><td>Slightly below average</td></tr>
+            <tr><td>10-11</td><td>+0</td><td>Average</td></tr>
+            <tr><td>12-13</td><td>+1</td><td>Slightly above average</td></tr>
+            <tr><td>14-15</td><td>+2</td><td>Talented</td></tr>
+            <tr><td>16-17</td><td>+3</td><td>Gifted</td></tr>
+            <tr><td>18-19</td><td>+4</td><td>Exceptional</td></tr>
+            <tr><td>20</td><td>+5</td><td>Peak of mortal ability</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="my-5" aria-labelledby="adv">
+      <h2 id="adv" class="mb-4">Advantage and disadvantage</h2>
+      <div class="row g-4">
+        <div class="col-12 col-md-6"><div class="panel"><h3>Advantage</h3><p>Roll two d20s and keep the higher one. It applies when the situation helps you, like attacking a distracted guard.</p></div></div>
+        <div class="col-12 col-md-6"><div class="panel"><h3>Disadvantage</h3><p>Roll two d20s and keep the lower one. It applies when something hinders you, like fighting while blinded.</p></div></div>
+      </div>
+    </section>
+
+    <section class="my-5" id="battle" aria-label="Battle map">
+      <div class="map" id="battle-map" role="group" aria-label="Battle map, 12 by 8 squares. Drag tokens or use the arrow keys."></div>
+    </section>
+
+    <section class="my-5" id="board" aria-labelledby="board-h">
+      <h2 id="board-h" class="mb-4">Dungeon planning board</h2>
+      <p>Build your own dungeon. Drag an icon from the chest onto a room frame. On a phone or with a keyboard, pick an icon first (tap or Enter), then choose a frame. Drag a placed icon to move it, or off the board to remove it.</p>
+      <div class="board-layout">
+        <div class="chest" role="group" aria-labelledby="chest-h">
+          <h3 id="chest-h">The item chest</h3>
+          <div class="tray" id="tray"></div>
+        </div>
+        <div class="board-wrap">
+          <div class="board" id="board-grid" role="group" aria-label="Dungeon rooms"></div>
+        </div>
+      </div>
+      <div class="board-bar">
+        <div class="board-stats" id="board-stats"></div>
+        <div class="board-actions">
+          <button type="button" class="btn btn-torch" id="board-roll">Roll the dungeon</button>
+          <button type="button" class="btn btn-ghost" id="board-clear">Clear board</button>
+        </div>
+      </div>
+      <p id="board-status" class="board-status" aria-live="polite"></p>
+    </section>
+  </article>
+</main>
+<footer class="site-footer"><div class="container">Endterm</div></footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="decor.js"></script>
+<script src="board.js"></script>
+<script src="battle.js"></script>
+</body>
+</html>
